@@ -11,13 +11,9 @@
 name: build_lede_x86_64_ssrplus
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
+  # 定时编译
+  schedule:
+    - cron: 0 2 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
